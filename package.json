@@ -1,0 +1,25 @@
+{
+  "name": "note-webapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeju-Boobby/note-webapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jeju-Boobby/note-webapp/issues"
+  },
+  "homepage": "https://github.com/Jeju-Boobby/note-webapp#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-gh-pages": "^0.5.4",
+    "gulp-minify-html": "^1.0.6"
+  }
+}
