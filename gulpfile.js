@@ -32,7 +32,7 @@ gulp.task('watch', function () {
 	gulp.watch(js, ['uglify-js']);
 	gulp.watch(css, ['minify-css']);
 	gulp.watch(html, ['compress-html']);
-	gulp.watch(dist + '/**').on('change', livereload.changed);
+	gulp.watch('/dist/**').on('change', livereload.changed);
 });
 
 gulp.task('deploy', ['uglify-js', 'compress-html', 'minify-css', 'watch'], function() {
