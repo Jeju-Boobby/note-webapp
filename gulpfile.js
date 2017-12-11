@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var minifyhtml = require('gulp-minify-html');
 var ghPages = require('gulp-gh-pages');
-var cleanCss = require('gulp-clean-css');
+var cleanCSS = require('gulp-clean-css');
 var livereload = require('gulp-livereload');
 
 var js = ['/src/js/*.js'];
