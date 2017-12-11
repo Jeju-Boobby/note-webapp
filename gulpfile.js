@@ -37,5 +37,5 @@ gulp.task('watch', function () {
 
 gulp.task('deploy', ['uglify-js', 'compress-html', 'minify-css', 'watch'], function() {
   return gulp.src('/dist/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages({branch: 'gh-pages'}));
 });
