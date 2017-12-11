@@ -35,9 +35,7 @@ gulp.task('watch', function () {
 	gulp.watch(dist + '/**').on('change', livereload.changed);
 });
 
-gulp.task('deploy', function() {
+gulp.task('deploy', ['uglify-js', 'compress-html', 'minify-css', 'watch'], function() {
   return gulp.src('/dist/**/*')
     .pipe(ghPages());
 });
-
-gulp.task('default', ['uglify-js', 'compress-html', 'minify-css', 'watch', 'deploy']);
