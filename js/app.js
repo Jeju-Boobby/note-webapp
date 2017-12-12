@@ -1,1 +1,1 @@
-console.log("my-note app.js");
+var FileSaver=require("file-saver"),memo=document.getElementById("memo"),btn_savenote=document.getElementById("btn-savenote"),saveNote=function(){var e=new Blob([memo.value],{type:"text/plain;charset=utf-8"});FileSaver.saveAs(e,"MyNote.txt")};btn_savenote.addEventListener("click",saveNote);
