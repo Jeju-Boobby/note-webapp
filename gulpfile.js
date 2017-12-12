@@ -12,7 +12,7 @@ var html = ['src/**/*.html'];
 gulp.task('uglify-js', function() {
     return gulp.src(js)
             .pipe(uglify())
-            .pipe(gulp.dest('dist/js/script.js'))
+            .pipe(gulp.dest('dist/js/'))
 });
 
 gulp.task('compress-html', function () {
@@ -32,10 +32,10 @@ gulp.task('watch', function () {
 	gulp.watch(js, ['uglify-js']);
 	gulp.watch(css, ['minify-css']);
 	gulp.watch(html, ['compress-html']);
-	gulp.watch('dist/**').on('change', livereload.changed);
+	gulp.watch('dist/**/*').on('change', livereload.changed);
 });
 
 gulp.task('deploy', ['uglify-js', 'compress-html', 'minify-css', 'watch'], function() {
   return gulp.src('dist/**/*')
-    .pipe(ghPages({branch: 'gh-pages'}));
+    .pipe(ghPages());
 });
