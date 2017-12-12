@@ -8,6 +8,7 @@ var livereload = require('gulp-livereload');
 var js = ['src/js/*.js'];
 var css = ['src/css/*.css'];
 var html = ['src/**/*.html'];
+var lib = ['src/lib/*.js'];
 
 gulp.task('uglify-js', function() {
     return gulp.src(js)
@@ -27,15 +28,21 @@ gulp.task('minify-css', function () {
     .pipe(gulp.dest('dist/css/'));
 });
 
+gulp.task('copy-lib', function() {
+  return gulp.src(lib)
+    .pipe(gulp.dest('dist/lib/'));
+});
+
 gulp.task('watch', function () {
 	livereload.listen();
 	gulp.watch(js, ['uglify-js']);
 	gulp.watch(css, ['minify-css']);
 	gulp.watch(html, ['compress-html']);
+  gulp.watch(lib, ['copy-lib']);
 	gulp.watch('dist/**/*').on('change', livereload.changed);
 });
 
-gulp.task('deploy', ['uglify-js', 'compress-html', 'minify-css', 'watch'], function() {
+gulp.task('deploy', ['uglify-js', 'compress-html', 'minify-css', 'copy-lib', 'watch'], function() {
   return gulp.src('dist/**/*')
     .pipe(ghPages());
 });
