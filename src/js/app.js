@@ -7,6 +7,8 @@ var btn_savenote = document.getElementById('btn-savenote');
 var btn_savenote_file = document.getElementById('btn-savenote-file');
 var btn_newnote = document.getElementById('btn-newnote');
 var btn_fullscreen = document.getElementById('btn-fullscreen');
+var btn_about = document.getElementById('btn-about');
+var about = document.getElementById('about');
 
 var saveNote = function () {
   // console.log('Try: save note');
@@ -42,8 +44,19 @@ var fullScreen = function () {
   }
 }
 
+var showAbout = function () {
+  about.style.display = "block";
+}
+
+var exitAbout = function() {
+  about.style.display = "none";
+}
+
+
 document.addEventListener('DOMContentLoaded', readExistNote);
 btn_savenote.addEventListener('click', saveNote);
 btn_newnote.addEventListener('click', newNote);
 btn_savenote_file.addEventListener('click', saveNoteToFile);
 btn_fullscreen.addEventListener('click', fullScreen);
+btn_about.addEventListener('click', showAbout);
+about.addEventListener('click', exitAbout);

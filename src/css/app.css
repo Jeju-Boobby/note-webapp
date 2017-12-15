@@ -1,12 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
 body,h1 {
     margin: 0;
     padding: 0;
 }
-.header {
+
+div.header {
     background: #eee;
-    height: 30px;
-    padding: 10px;
+    padding: 5px 15px;
 }
+
+div.header::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
 h1 {
     float: left;
 }
@@ -22,4 +33,51 @@ h1 {
 #memo {
     width: 100%;
     height: 200px;
+}
+
+div.about-container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+.about-container .about {
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 20% auto;
+  height: 150px;
+  width: 250px;
+  background-color: white;
+  padding: 10px;
+}
+
+.about ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.title {
+  display: block;
+  height: 50px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+li.version {
+  display: block;
+  height: 50px;
+  font-size: 24px;
+}
+
+li.developer {
+  display: block;
+  height: 30px;
+  font-size: 18px;
 }
